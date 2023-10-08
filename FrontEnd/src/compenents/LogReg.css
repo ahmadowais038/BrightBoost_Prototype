@@ -1,0 +1,9 @@
+.LogIn{
+    /* background-color: rgb(64, 79, 102); */
+    flex: 0 0 20%;
+    background-color: #333;
+    width: 80%;
+    text-align: center;
+    align: center;
+    border: 6px solid black;
+  }
