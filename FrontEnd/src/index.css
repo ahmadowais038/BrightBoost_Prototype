@@ -1,69 +1,365 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.App {
+  text-align: center;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.float-right{
+  float: right;
+}
+.btn-actions button{
+  margin: 0 10px;
+}
+.App-header {
+  background-color: #282c34;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.App-link {
+  color: #61dafb;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.App {
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+  background-color: #ecf1ee;
+  color:#808080;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/** Global */
+.white-box {
+  margin-top: 12px;
+  background-color: #fff;
+
+}
+
+.white-box .title {
+  font-size: 14px;
+  text-align: left;
+  background: #31a992;
+  padding: 8px 12px;
+}
+
+.white-box .title p {
+  margin-bottom: 0;
+  color:#fff;
+}
+
+.white-box .content {
+  margin-top: 12px;
+  
+  padding: 8px 12px;
+}
+.flex-container {
+  display: flex;
+
+}
+.white-box .additional-information{
+  margin-top: 12px;
+  border-top: 1px solid #31a992;
+  padding-top: 12px;
+  text-align: left;
+}
+.white-box .additional-information.action{
+  text-align: center;
+}
+.btn-primary{
+  background-color:#04375b !important;
+  font-size: 14px !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  margin-top: 8px;
+}
+
+
+
+
+/** Header */
+.header-container {
+  height: 50px;
+  background-color: #fff;
+}
+
+.header-container .logo img {
+  float: left;
+}
+
+.nav-container {
+  font-size: 14px;
+}
+
+.nav-container a {
+  color: #808080;
+  padding: 14px 12px
+}
+
+.nav-container a.active {
+  color: #22345d;
+  border-bottom: 3px solid #22345d;
+  padding-bottom: 12px;
+}
+
+.profile-container {
+  float: right;
+}
+.profile-container ul{
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+.profile-container li {
+  display: table-cell;
+  padding: 8px 8px
+}
+.profile-container img{
+  width: 18px;
+}
+.profile-container .logout {
+  width: 14px;
+}
+
+/** AcademicInformation */
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.information{
+  text-align: left;
+  align-self: center;
+  margin-left: 12px;
+}
+.information {
+  font-size: 14px;
+}
+.information .name{
+  font-weight: 700;
+  font-size: 18px;
+  color:#000;
+}
+
+
+.attendance-history-container,
+.academic-information-container{
+  height: 302px;
+  overflow: hidden;
+}
+.upcoming-sessions-container{
+  height: 352px;
+}
+
+.additional-information img{
+  width: 18px;
+  margin-right: 12px;
+}
+.additional-information .email{
+  color: #31a992;
+  font-size: 14px;
+}
+
+/**AttendanceHistory */
+.chart{
+  height: 173px;
+}
+
+.additional-information p{
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+.additional-information p.date{
+  color: #31a992;
+  font-size: 12px;
+}
+
+/** Upcoming Sessions */
+.session-table-container th,
+.session-table-container td{
+  font-size: 12px;
+}
+.subjects-table-container th,
+.subjects-table-container td{
+  font-size: 12px;
+}
+.subjects-table-container tr td{
   cursor: pointer;
-  transition: border-color 0.25s;
+  
 }
-button:hover {
-  border-color: #646cff;
+.subjects-table-container tr td.select{
+  text-align: center
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.subjects-table-container tr td.select img{
+  width: 14px;
+}
+.subjects-table-container tr.selected td,
+.subjects-table-container tr.selected th{
+  background:#31a992;
+  color:#fff;
+  font-weight: 400;
+  font-size: 12px;
+} 
+
+.subjects-table-container .go-back{
+  color: #31a992;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  padding: 8px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.subjects-table-container .go-back img{
+  margin-top: -2px;
+  width: 10px;
+  margin-right: 8px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.subjects-table-container .question-area{
+  
+  font-size: 12px;
+  border-radius: 0;
+}
+
+/** Recently Asked Questions */
+.recent-asked-container{
+  height: 249px;
+}
+.recent-asked-container .content{
+  padding: 0;
+  margin-top: 0;
+  padding-left: 12px;
+  text-align: left;
+  height: 211px;
+  overflow-y: scroll;
+}
+.recent-asked-container .content .question-answer-container{
+  margin-top: 8px;
+}
+.recent-asked-container .content .question-answer-container .question{
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0;
+}
+.recent-asked-container .content .question-answer-container .answer{
+  padding-left: 8px;
+  font-size: 14px;
+}
+.ask-a-question-container,
+.reserve-study-container{
+  height: 93px;
+  padding: 12px;
+}
+.ask-a-question-container h3,
+.reserve-study-container h3{
+  font-size: 18px;
+  color:#000
+
+}
+.filter-input{
+  font-size: 12px !important;
+  border-radius: 0 !important;
+}
+
+.white-box .content.faq-content{
+  padding: 12px 80px;
+  padding-bottom: 30px;
+  text-align: left;
+}
+
+/** Footer */
+.footer-container{
+  margin-top: 30px;
+  height: 250px;
+  background-color: #31a992;
+  padding-top: 30px;
+  color:#fff;
+}
+.footer-container .flex-container{
+  justify-content: space-between;
+}
+.footer-item-container{
+  padding: 0px 8px;
+  text-align: left;
+  flex: 1;
+}
+
+.footer-item-container.footer-logo{
+  align-self: center;
+  text-align: center;
+}
+.footer-item-container h4{
+  font-weight: 700;
+  font-size: 18px;
+}
+.footer-item-container p{
+  font-weight: 400;
+  font-size: 14px;
+}
+.footer-container .socal-medias{
+  margin-top: 24px;
+}
+.footer-container .socal-medias ul li{
+  display: table-cell;
+
+  padding-right: 32px;
 }
