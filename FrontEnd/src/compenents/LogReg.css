@@ -1,9 +1,26 @@
+.by{
+  background-color: rgb(64, 79, 102);
+  display: flex;
+  justify-content: center; /*Horizontally center the container
+  /* align-items: center; Vertically center the container */
+  height: 100vh; /* Set the container height to the viewport height */
+}
+
+.centered-container {
+  border: 6px solid black;
+  margin-top: 2vh;
+  background-color: #333;
+  width: 30vw;
+  height: 30%;
+}
+/* 
+.centered-container {
+  border: 2px solid black; Black border for the centered container
+  background-color: green; Green background for the centered container
+  padding: 20px; Add some padding to create space between the content and border
+} */
+
 .LogIn{
-    /* background-color: rgb(64, 79, 102); */
-    flex: 0 0 20%;
-    background-color: #333;
-    width: 80%;
-    text-align: center;
-    align: center;
-    border: 6px solid black;
-  }
+    text-align: center;    
+}
+

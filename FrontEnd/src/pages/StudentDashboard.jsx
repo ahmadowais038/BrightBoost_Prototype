@@ -1,14 +1,14 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "./../compenents/Header";
 import { Container, Row, Col } from "react-bootstrap";
-import AcademicInformation from "../components/Student/AcademicInformation";
-import AttendanceHistory from "../components/Student/AttendanceHistory";
-import UpcomingSessions from "../components/Student/Sessions/UpcomingSessions";
-import AskAQuestion from "../components/Student/Subjects/AskAQuestion";
-import RecentAskedQuestions from "../components/Student/RecentAskedQuestions";
-import ReserveStudySpace from "../components/Student/ReserveStudySpace";
-import FAQs from "../components/Student/FAQs";
-import Footer from "../components/Footer";
+import AcademicInformation from "./../compenents/Student/AcademicInformation";
+import AttendanceHistory from "./../compenents/Student/AttendanceHistory";
+import UpcomingSessions from "./../compenents/Student/Sessions/UpcomingSessions";
+import AskAQuestion from "./../compenents/Student/Subjects/AskAQuestion";
+import RecentAskedQuestions from "./../compenents/Student/RecentAskedQuestions";
+import ReserveStudySpace from "./../compenents/Student/ReserveStudySpace";
+import FAQs from "./../compenents/Student/FAQs";
+import Footer from "./../compenents/Footer";
 
 const StudentDashboard = () => {
   return (
