@@ -1,18 +1,28 @@
 from flask import Flask, request, render_template, jsonify
+
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
+@app.route('/')
+def hello():
+    return jsonify('Hello World!')
 
-        if not email or not password:
-            return jsonify({'message': 'Please provide both email and password.'})
+if __name__ == '__main__':
+    app.run(debug=True)
 
-        # Perform your actual login verification here, e.g., checking against a database.
-        # Replace the following line with your verification logic.
-        if email == 'example@email.com' and password == 'password':
-            return jsonify({'message': 'Login successful'})
-        else:
-            return jsonify({'message': 'Login failed'})
+# app = Flask(__name__)
+
+# @app.route('/login', methods=['POST'])
+# def login():
+#     data = request.get_json()
+#     email = data.get('email')
+#     password = data.get('password')
+
+#     if not email or not password:
+#         return jsonify({'message': 'Please provide both email and password'}), 400
+
+#     # Perform further authentication logic here (e.g., check against a database)
+#     # For this example, we'll just return a success message.
+#     return jsonify({'message': 'Login successful'}), 200
+
+# if __name__ == '__main__':
+#     app.run(debug=True)

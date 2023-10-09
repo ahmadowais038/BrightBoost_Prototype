@@ -1,22 +1,35 @@
-import React from "react";
-import Header from "./../compenents/Header";
+import React, { useState, useEffect } from "react";
+import Header from "../compenents/Header";
 import { Container, Row, Col } from "react-bootstrap";
-import AcademicInformation from "./../compenents/Student/AcademicInformation";
-import AttendanceHistory from "./../compenents/Student/AttendanceHistory";
-import UpcomingSessions from "./../compenents/Student/Sessions/UpcomingSessions";
-import AskAQuestion from "./../compenents/Student/Subjects/AskAQuestion";
-import RecentAskedQuestions from "./../compenents/Student/RecentAskedQuestions";
-import ReserveStudySpace from "./../compenents/Student/ReserveStudySpace";
-import FAQs from "./../compenents/Student/FAQs";
-import Footer from "./../compenents/Footer";
+import AcademicInformation from "../compenents/Student/AcademicInformation";
+import AttendanceHistory from "../compenents/Student/AttendanceHistory";
+import UpcomingSessions from "../compenents/Student/Sessions/UpcomingSessions";
+import AskAQuestion from "../compenents/Student/Subjects/AskAQuestion";
+import RecentAskedQuestions from "../compenents/Student/RecentAskedQuestions";
+import ReserveStudySpace from "../compenents/Student/ReserveStudySpace";
+import FAQs from "../compenents/Student/FAQs";
+import Footer from "../compenents/Footer";
 
-const StudentDashboard = () => {
+const UserSignIn = () => {
+    
+    const [message, setMessage] = useState('');
+
+    useEffect(() => {
+        // Make a GET request to the Flask backend
+        fetch("/").then(
+            response => response.json()
+        )
+        .then(
+            data => console.log(data)
+        )
+    });
+
     return (
         <div className="student-dashboard-container">
             <Header />
             <Container className="Content" fluid>
-                <Row className="LogReg">
-                    <Col sm={6}>
+                <Row className="LogContainer">
+                    <Col className="LogReg" sm={6}>
                         <div className="Log">
                             <form className="form">
                                 <h2 id="form_title">Log in to your Account</h2>
@@ -43,14 +56,17 @@ const StudentDashboard = () => {
                                     SIGN IN
                                 </button>
                             </form>
+                            <br />
+                            <br />
                         </div>
                     </Col>
                 </Row>
-
             </Container>
+
+            <p></p>
             <Footer />
         </div>
     );
 };
 
-export default StudentDashboard;
+export default UserSignIn;
