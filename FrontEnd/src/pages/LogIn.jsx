@@ -11,18 +11,40 @@ import FAQs from "../compenents/Student/FAQs";
 import Footer from "../compenents/Footer";
 
 const UserSignIn = () => {
-    
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
-    useEffect(() => {
-        // Make a GET request to the Flask backend
-        fetch("/").then(
-            response => response.json()
-        )
-        .then(
-            data => console.log(data)
-        )
-    });
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Check if either field is empty
+        if (!email || !password) {
+            setMessage('Error: Both fields are required.');
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setMessage(data.message);
+            } else {
+                setMessage('Error: Failed to log in.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setMessage('Error: An error occurred.');
+        }
+    };
 
     return (
         <div className="student-dashboard-container">
@@ -31,7 +53,7 @@ const UserSignIn = () => {
                 <Row className="LogContainer">
                     <Col className="LogReg" sm={6}>
                         <div className="Log">
-                            <form className="form">
+                            <form className="form" onSubmit={handleSubmit}>
                                 <h2 id="form_title">Log in to your Account</h2>
                                 <p>
                                     Email: <input
@@ -39,7 +61,8 @@ const UserSignIn = () => {
                                         type="text"
                                         placeholder="example@email.com"
                                         name="email"
-                                    // value={email}
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </p>
 
@@ -49,7 +72,8 @@ const UserSignIn = () => {
                                         type="password"
                                         placeholder="Password"
                                         name="password"
-                                    // value={password}
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </p>
                                 <button type="submit" className="signin" name="signin">
@@ -58,6 +82,7 @@ const UserSignIn = () => {
                             </form>
                             <br />
                             <br />
+                            <p>{message}</p>
                         </div>
                     </Col>
                 </Row>
