@@ -1,0 +1,56 @@
+/* Base container for homepage */
+.homepage-container {
+    background-color: #f8f9fa; /* Light background color */
+    padding-bottom: 50px; /* Space before footer */
+}
+
+/* Intro section styles */
+.intro-section {
+    text-align: center; /* Center the text */
+    padding: 60px 0; /* Vertical padding */
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+}
+
+/* About section styles */
+.about-section {
+    padding: 40px 0; /* Vertical padding */
+}
+
+.about-section h2 {
+    margin-top: 0;
+}
+
+/* Testimonial section */
+.testimonial-section {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 40px 0; /* Vertical padding */
+}
+
+.testimonial-section blockquote {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 5px; /* Slightly rounded corners */
+    position: relative;
+}
+
+.testimonial-section blockquote::before {
+    content: '\201C'; /* Large open quotation mark */
+    font-size: 3em; /* Increase size */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #333; /* Dark color */
+}
+
+.testimonial-section footer {
+    display: block;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* CTA section */
+.cta-section {
+    text-align: center; /* Center the text */
+    padding: 60px 0; /* Vertical padding */
+}
