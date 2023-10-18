@@ -10,41 +10,15 @@ import ReserveStudySpace from "../compenents/Student/ReserveStudySpace";
 import FAQs from "../compenents/Student/FAQs";
 import Footer from "../compenents/Footer";
 
+
+
 const UserSignIn = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [message, setMessage] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        // Check if either field is empty
-        if (!email || !password) {
-            setMessage('Error: Both fields are required.');
-            return;
-        }
-
-        try {
-            const response = await fetch('/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                setMessage(data.message);
-            } else {
-                setMessage('Error: Failed to log in.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            setMessage('Error: An error occurred.');
-        }
+    const handleShowPass = () => {
+        setShowPassword(!showPassword);
     };
+    
 
     return (
         <div className="student-dashboard-container">
@@ -53,31 +27,77 @@ const UserSignIn = () => {
                 <Row className="LogContainer">
                     <Col className="LogReg" sm={6}>
                         <div className="Log">
-                            <form className="form" onSubmit={handleSubmit}>
-                                <h2 id="form_title">Log in to your Account</h2>
+                            <form className="form">
+                                <h2 id="form_title">Register your account</h2>
                                 <p>
-                                    Email: <input
+                                    First Name: <input
                                         className="form__input"
                                         type="text"
-                                        placeholder="example@email.com"
-                                        name="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="First Name"
+                                        name="FirstName"
+                                    // value={email}
+                                    // onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </p>
 
                                 <p>
-                                    Password: <input
+                                    Last Name: <input
                                         className="form__input"
-                                        type="password"
-                                        placeholder="Password"
-                                        name="password"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
+                                        type="text"
+                                        placeholder="Last Name"
+                                        name="LastName"
+                                    // value={email}
+                                    // onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </p>
+
+                                <p>
+                                    email: <input
+                                        className="form__input"
+                                        type="email"
+                                        placeholder="email@email.com"
+                                        name="email"
+                                    // value={email}
+                                    // onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                </p>
+
+                                <p>
+                                    Username: <input
+                                        className="form__input"
+                                        type="username"
+                                        placeholder="username"
+                                        name="username"
+                                    // value={password}
+                                    // onChange={(e) => setPassword(e.target.value)}
+                                    />
+                                </p>
+
+                                <p>
+                                Password: <input
+                                        className="form__input"
+                                        type={showPassword ? "text" : "password"}
+                                        placeholder="Password"
+                                        name="password"
+                                    />
+                                    Show Password
+                                    <input
+                                        type="checkbox"
+                                        onClick={handleShowPass}
+                                    />
+                                </p>
+
+
+                                {/* <p>
+                                    Account type:
+                                    <select id="account type" name="account type" required>
+                                        <option value="" selected disabled>Please Select</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Teacher">Tutor</option>
+                                    </select>
+                                </p> */}
                                 <button type="submit" className="signin" name="signin">
-                                    SIGN IN
+                                    Register
                                 </button>
                             </form>
                             <br />
