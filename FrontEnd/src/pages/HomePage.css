@@ -1,56 +1,105 @@
-/* Base container for homepage */
+/* HomePage.css */
+
+/* Base Styles */
 .homepage-container {
-    background-color: #f8f9fa; /* Light background color */
-    padding-bottom: 50px; /* Space before footer */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-/* Intro section styles */
+.content-container {
+    padding: 50px 0;
+}
+
+/* Intro Section */
 .intro-section {
-    text-align: center; /* Center the text */
-    padding: 60px 0; /* Vertical padding */
-    background-color: #333; /* Dark background color */
-    color: #fff; /* White text color */
+    text-align: center;
+    padding: 50px 0;
+    background-color: #fff;
 }
 
-/* About section styles */
+.intro-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.intro-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Auth Section (Sign In & Register) */
+.auth-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.register-box, .login-box {
+    text-align: center;
+    padding: 30px;
+}
+
+.register-box h2, .login-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* About Section */
 .about-section {
-    padding: 40px 0; /* Vertical padding */
+    background-color: #fff;
+    padding: 50px 0;
 }
 
 .about-section h2 {
-    margin-top: 0;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-/* Testimonial section */
+.about-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Testimonials Section */
 .testimonial-section {
-    background-color: #f8f9fa; /* Light background color */
-    padding: 40px 0; /* Vertical padding */
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.testimonial-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
 }
 
 .testimonial-section blockquote {
-    background-color: #fff; /* White background */
+    background-color: #fff;
     padding: 20px;
-    border-radius: 5px; /* Slightly rounded corners */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     position: relative;
-}
-
-.testimonial-section blockquote::before {
-    content: '\201C'; /* Large open quotation mark */
-    font-size: 3em; /* Increase size */
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #333; /* Dark color */
-}
-
-.testimonial-section footer {
-    display: block;
-    margin-top: 15px;
     font-style: italic;
 }
 
-/* CTA section */
-.cta-section {
-    text-align: center; /* Center the text */
-    padding: 60px 0; /* Vertical padding */
+.testimonial-section blockquote footer {
+    font-size: 1rem;
+    text-align: right;
+    margin-top: 15px;
+    display: block;
+    color: #777;
+}
+
+/* Buttons Styles */
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    width: 200px;
+    height: 60px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
 }
