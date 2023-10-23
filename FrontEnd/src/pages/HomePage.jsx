@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './../compenents/Header';
 import Footer from './../compenents/Footer';
+import LoginModal from './../compenents/LoginModal';
+import RegisterModal from './../compenents/RegisterModal';
 import { Container, Button, Row, Col } from 'react-bootstrap';
 import './HomePage.css';
 
 const HomePage = () => {
+    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [showRegisterModal, setShowRegisterModal] = useState(false);
+
+    const handleLoginClose = () => setShowLoginModal(false);
+    const handleLoginShow = () => setShowLoginModal(true);
+
+    const handleRegisterClose = () => setShowRegisterModal(false);
+    const handleRegisterShow = () => setShowRegisterModal(true);
+
     return (
         <div className="homepage-container">
             <Header />
@@ -14,7 +25,17 @@ const HomePage = () => {
                     <Col sm={12}>
                         <h1>Welcome to Bright Boost</h1>
                         <p>Your Path to Academic Excellence!</p>
-                        <Button variant="primary" href="/dashboard">Access Your Dashboard</Button>
+                    </Col>
+                </Row>
+
+                <Row className="auth-section">
+                    <Col sm={6} className="register-box">
+                        <h2>Sart Your Journey Today</h2>
+                        <Button variant="primary" onClick={handleRegisterShow}>Register</Button>
+                    </Col>
+                    <Col sm={6} className="login-box">
+                        <h2>ALREADY A MEMBER</h2>
+                        <Button variant="secondary" onClick={handleLoginShow}>Sign In</Button>
                     </Col>
                 </Row>
 
@@ -32,6 +53,7 @@ const HomePage = () => {
                         </p>
                     </Col>
                 </Row>
+
                 <Row className="testimonial-section">
                     <Col sm={12}>
                         <h2>Testimonials</h2>
@@ -55,21 +77,15 @@ const HomePage = () => {
                         </blockquote>
                     </Col>
                 </Row>
-
-                <Row className="cta-section">
-                    <Col sm={12}>
-                        <h2>Join Us Today!</h2>
-                        <p>Ready to elevate your academic journey? Sign up now and take the first step towards excellence.</p>
-                        <Button variant="success" size="lg">Sign Up</Button>
-                    </Col>
-                </Row>
             </Container>
 
             <Footer />
+
+            {/* Include the modals */}
+            <LoginModal show={showLoginModal} handleClose={handleLoginClose} />
+            <RegisterModal show={showRegisterModal} handleClose={handleRegisterClose} />
         </div>
     );
 };
 
 export default HomePage;
-
-               
