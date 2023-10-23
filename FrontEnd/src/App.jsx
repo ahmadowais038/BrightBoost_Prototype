@@ -6,10 +6,11 @@ import Admin from './pages/AdminDashboard';
 // import LogReg from "./compenents/LogReg"
 import Login from "./pages/LogIn";
 import Home from'./pages/HomePage';
+import Tutor from "./pages/TutorDashboard"
 
 function App() {
   return (
-    <Login />
+    <Tutor />
   );
 }
 

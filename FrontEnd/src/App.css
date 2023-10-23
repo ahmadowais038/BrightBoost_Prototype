@@ -127,9 +127,11 @@
   font-size: 14px !important;
   border-radius: 0 !important;
   border: 0 !important;
+  color: white;
   margin-top: 8px;
+  padding: 6px 8px; 
+  
 }
-
 
 
 
@@ -384,4 +386,252 @@
 .Log{
   text-align: center;
   margin-top: 5px;
+}
+
+/** Tutor Dashboard */
+/** Tutot Upcoming Sessions */
+.tutorupcoming-sessions-container{
+  height: 302px;
+}
+/* Questions to be Answered */
+
+.questionstobeanswered-container {
+  height: 350px;
+  overflow: hidden;
+}
+
+.questionstobeanswered-content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.centered-container {
+  margin-bottom: 20px; 
+}
+
+.session-selection-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  margin-top: 10px;
+  border: 1px solid #ddd; 
+  padding: 20px;
+  width: 450px; 
+  height: 175px; 
+}
+
+.session-selection-container label {
+  font-size: 25px; 
+  margin-bottom: 15px; /* Add space between label and dropdown */
+}
+
+.session-selection-container select {
+  margin-bottom: 15px; /* Add space between dropdown and button */
+}
+
+.session-selection-container button {
+  margin-top: 6px; /* Add space above the button */
+}
+
+.header {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 35px;
+}
+
+/* Questions Dialog */
+
+.questions-dialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #31a992;
+  border-radius: 5px;
+  width: 1000px;
+  z-index: 1000;
+}
+
+.questions-dialog-header {
+  background-color: #31a992;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.questions-dialog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.questions-dialog th,
+.questions-dialog td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.questions-dialog .button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+/** Recently Answered Questions */
+.recent-answered-container {
+  height: 350px;
+  overflow: hidden; 
+}
+
+.recent-answered-container .content {
+  padding: 0;
+  margin-top: 0;
+  padding-left: 12px;
+  text-align: left;
+  height: 100%; 
+  overflow-y: scroll; 
+}
+
+.recent-answered-container .content ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+}
+
+/** SelectAvailability */
+.selectavailability-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.selectavailability-content {
+  display: flex;
+  flex: 1;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  box-sizing: border-box;
+  position: relative;
+  width: 50%; /* Set width to 50% */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  display: inline-block;
+  width: 0 0 100px; 
+  text-align: left;
+  margin-bottom: 5px; 
+}
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Add a vertical line to separate form and table */
+.form-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background-color: #ddd; /* Line color */
+  margin-right: 10px;
+}
+
+.table-container {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 20px;
+  width: 50%; /* Set width to 50% */
+  overflow-y: auto; /* Add vertical scrollbar */
+  max-height: 200px;
+}
+.table-container th,
+.table-container td{
+  font-size: 12px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: separate;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  border: 1px solid #dddd; /* Border for all sides of cells */
+  padding: 12px;
+  text-align: centered;
+}
+
+th {
+  color: #000;
+}
+th, td {
+  border-top: 1px solid #dddd;
+  border-bottom: 1px solid #dddd;
+  border-left: 1px solid #dddd;
+  border-right: 1px solid #dddd;
+}
+/* EditDialog styling */
+.edit-dialog {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #31a992;
+  border-radius: 5px;
+  width: 400px; /* Adjust the width as needed */
+}
+
+.edit-dialog-header {
+  background-color: #31a992;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.edit-dialog .form-group {
+  margin-bottom: 15px;
+}
+
+.edit-dialog .button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
 }
