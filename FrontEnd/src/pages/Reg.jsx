@@ -15,8 +15,6 @@ const UserSignIn = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [message, setMessage] = useState('');
     const [formData, setFormData] = useState({
-        // FirstName: "",
-        // LastName: "",
         email: "",
         username: "",
         password: "",
@@ -26,7 +24,6 @@ const UserSignIn = () => {
         setShowPassword(!showPassword);
     };
 
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -34,8 +31,6 @@ const UserSignIn = () => {
             [name]: value,
         });
     };
-
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -64,49 +59,27 @@ const UserSignIn = () => {
                 <Row className="LogContainer">
                     <Col className="LogReg" sm={6}>
                         <div className="Log">
-                            <form className="form" onSubmit={handleSubmit} >
+                            <form className="form" onSubmit={handleSubmit}>
                                 <h2 id="form_title">Register your account</h2>
-                                {/* <p>
-                                    First Name: <input
-                                        className="form__input"
-                                        type="text"
-                                        placeholder="First Name"
-                                        name="FirstName"
-                                    // value={email}
-                                    // onChange={(e) => setEmail(e.target.value)}
-                                    />
-                                </p> */}
-
-                                {/* <p>
-                                    Last Name: <input
-                                        className="form__input"
-                                        type="text"
-                                        placeholder="Last Name"
-                                        name="LastName"
-                                    // value={email}
-                                    // onChange={(e) => setEmail(e.target.value)}
-                                    />
-                                </p> */}
-
                                 <p>
-                                    email: <input
+                                    Email: <input
                                         className="form__input"
                                         type="email"
                                         placeholder="email@email.com"
                                         name="email"
                                         value={formData.email}
-                                        onChange={(e) => handleChange(e.target.value)}
+                                        onChange={handleChange}
                                     />
                                 </p>
 
                                 <p>
                                     Username: <input
                                         className="form__input"
-                                        type="username"
+                                        type="text"
                                         placeholder="username"
                                         name="username"
                                         value={formData.username}
-                                        onChange={(e) => handleChange(e.target.value)}
+                                        onChange={handleChange}
                                     />
                                 </p>
 
@@ -115,8 +88,9 @@ const UserSignIn = () => {
                                         className="form__input"
                                         type={showPassword ? "text" : "password"}
                                         placeholder="Password"
-                                        value = {formData.password}
                                         name="password"
+                                        value={formData.password}
+                                        onChange={handleChange}
                                     />
                                     Show Password
                                     <input
@@ -125,15 +99,6 @@ const UserSignIn = () => {
                                     />
                                 </p>
 
-
-                                {/* <p>
-                                    Account type:
-                                    <select id="account type" name="account type" required>
-                                        <option value="" selected disabled>Please Select</option>
-                                        <option value="Student">Student</option>
-                                        <option value="Teacher">Tutor</option>
-                                    </select>
-                                </p> */}
                                 <button type="submit" className="signin" name="signin">
                                     Register
                                 </button>
@@ -141,6 +106,7 @@ const UserSignIn = () => {
                             <br />
                             <br />
                             <p>{message}</p>
+
                         </div>
                     </Col>
                 </Row>
