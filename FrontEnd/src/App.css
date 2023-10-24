@@ -366,14 +366,15 @@
   padding-right: 32px;
 }
 
-.LogContainer {
+/* .LogContainer {
   border: 6px solid black;
-  /* margin-top: 2vh; */
+  margin-top: 2vh;
   background-color: #04AA6D;
-   width: 30vw;/*
-  height: 40vh; */
+   width: 30vw;
+  height: 40vh;
   justify-content: center;
-}
+} */
+
 
 .Content{
   height: 100vh;

@@ -10,7 +10,7 @@ import Tutor from "./pages/TutorDashboard"
 
 function App() {
   return (
-    <Tutor />
+    <Home />
   );
 }
 
