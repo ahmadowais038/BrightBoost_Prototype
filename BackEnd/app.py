@@ -21,8 +21,7 @@ CORS(app)  # Enable CORS for the entire app
 
 class Student(SQL_DB.Model):
     __tablename__ = 'students'
-    Student_ID = SQL_DB.Column(
-        SQL_DB.Integer, primary_key=True, autoincrement=True)
+    Account_ID = SQL_DB.Column(SQL_DB.Integer, primary_key=True)
     First_Name = SQL_DB.Column(SQL_DB.String(25))
     Last_Name = SQL_DB.Column(SQL_DB.String(25))
     Email = SQL_DB.Column(SQL_DB.String(255), nullable=False)
@@ -40,8 +39,7 @@ class Student(SQL_DB.Model):
 
 class Tutors(SQL_DB.Model):
     __tablename__ = 'tutors'
-    Tutor_ID = SQL_DB.Column(
-        SQL_DB.Integer, primary_key=True, autoincrement=True)
+    Account_ID = SQL_DB.Column(SQL_DB.Integer, primary_key=True)
     First_Name = SQL_DB.Column(SQL_DB.String(25))
     Last_Name = SQL_DB.Column(SQL_DB.String(25))
     Email = SQL_DB.Column(SQL_DB.String(255), nullable=False)
@@ -56,7 +54,7 @@ class Tutors(SQL_DB.Model):
 
 class Approve(SQL_DB.Model):
     __tablename__ = 'registration'
-    ID = SQL_DB.Column(SQL_DB.Integer, primary_key=True, autoincrement=True)
+    Account_ID = SQL_DB.Column(SQL_DB.Integer, primary_key=True)
     FName = SQL_DB.Column(SQL_DB.String(25))
     LName = SQL_DB.Column(SQL_DB.String(25))
     email = SQL_DB.Column(SQL_DB.String(255), nullable=False)
@@ -67,6 +65,13 @@ class Approve(SQL_DB.Model):
 
     def __repr__(self):
         return f'User("{self.ID}","{self.FName}","{self.LName}","{self.email}","{self.Phone_Num}","{self.uname}","{self.password}","{self.Subjects}")'
+
+class Accounts(SQL_DB.Model):
+    __tablename__ = 'Accounts'
+    Account_ID = SQL_DB.Column(SQL_DB.String, primary_key=True)
+    email = SQL_DB.Column(SQL_DB.String(255), nullable=False)
+    uname = SQL_DB.Column(SQL_DB.String(25))
+    password = SQL_DB.Column(SQL_DB.String(25))
 
 
 @app.route('/')
@@ -92,7 +97,10 @@ def Register():
         Card_Num = data.get('cardnum')
         CVV = data.get('CVV')
         expiry = data.get('expiry')
-        
+        num_existing_students = Student.query.count()
+        user_id = f'S15{num_existing_students + 1:02}'
+
+
         existing_email = Student.query.filter_by(Email=Email).first()
         existing_uname = Student.query.filter_by(Username=Username).first()
 
@@ -106,6 +114,7 @@ def Register():
             return jsonify({"message": "Account associated with this username already exists"}), 400
 
         new_student = Student(
+            Account_ID = user_id,
             First_Name=FName,
             Last_Name=LName,
             Email=Email,
@@ -125,6 +134,9 @@ def Register():
     elif role == "Tutor":
         existing_email = Tutors.query.filter_by(Email=Email).first()
         existing_uname = Tutors.query.filter_by(Username=Username).first()
+        num_existing_tutors = Tutors.query.count()
+        user_id = f'T11{num_existing_tutors + 1:02}'
+
 
         if existing_email and existing_uname:
             return jsonify({"message": "Account associated with this email and username already exists"}), 400
@@ -136,6 +148,7 @@ def Register():
             return jsonify({"message": "Account associated with this username already exists"}), 400
         
         new_Tutor = Approve(
+            Account_ID = user_id,
             FName=FName,
             LName=LName,
             email=Email,
@@ -151,7 +164,7 @@ def Register():
 
 @app.route('/api/log', methods=['POST'])
 def LogIn():
-    
+
     pass
 
 if __name__ == '__main':
