@@ -3,10 +3,13 @@ import { Table, Button, Modal, Form } from 'react-bootstrap';
 
 export default function UserManagement() {
     const [users, setUsers] = useState([
-        // Example initial data
         { id: 1, name: "John Doe", role: "Student", email: "john@example.com" },
+        { id: 2, name: "Alice Smith", role: "Tutor", email: "alice@example.com" },
         // ... add more user objects as needed
     ]);
+
+    const students = users.filter(user => user.role === "Student");
+    const tutors = users.filter(user => user.role === "Tutor");
 
     const [showModal, setShowModal] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
@@ -28,12 +31,9 @@ export default function UserManagement() {
         closeModal();
     };
 
-    return (
-        <div className="user-management-section">
-            <h3>User Management</h3>
-            
-            <Button onClick={() => openModal(null)}>Add New User</Button>
-            
+    const renderTable = (data, title) => (
+        <>
+            <h4>{title}</h4>
             <Table bordered>
                 <thead>
                     <tr>
@@ -45,7 +45,7 @@ export default function UserManagement() {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map(user => (
+                    {data.map(user => (
                         <tr key={user.id}>
                             <td>{user.id}</td>
                             <td>{user.name}</td>
@@ -59,6 +59,15 @@ export default function UserManagement() {
                     ))}
                 </tbody>
             </Table>
+        </>
+    );
+
+    return (
+        <div className="user-management-section">
+            <h3>User Management</h3>
+            
+            {renderTable(students, "Students")}
+            {renderTable(tutors, "Tutors")}
 
             <Modal show={showModal} onHide={closeModal}>
                 <Modal.Header closeButton>
@@ -74,8 +83,7 @@ export default function UserManagement() {
                             <Form.Label>Role</Form.Label>
                             <Form.Control as="select" defaultValue={currentUser?.role}>
                                 <option>Student</option>
-                                <option>Teacher</option>
-                                <option>Admin</option>
+                                <option>Tutor</option>
                             </Form.Control>
                         </Form.Group>
                         <Form.Group>
