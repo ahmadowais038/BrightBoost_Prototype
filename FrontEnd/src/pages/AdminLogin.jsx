@@ -9,7 +9,7 @@ const AdminLogin = () => {
     const [error, setError] = useState('');
 
     const handleLogin = () => {
-        if (username === "admin" && password === "password") {  // This is just for the demo. Please use proper authentication in real-world scenarios.
+        if (username === "admin" && password === "password") { 
             console.log("Logged in successfully");
             // Redirect to the admin dashboard or other desired location
         } else {
