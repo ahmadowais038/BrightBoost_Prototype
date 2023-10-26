@@ -396,7 +396,7 @@
   overflow: hidden;
 }
 .tutorsession-table-container {
-  max-height: 220px; /* Set the maximum height to 90% of the container */
+  max-height: 220px; /* Set the maximum height of the container */
   overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
 }
 .custom-modal {
