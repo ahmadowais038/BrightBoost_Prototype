@@ -8,6 +8,7 @@ import Login from "./pages/Reg";
 import Home from './pages/HomePage';
 import AdminDashboard from './pages/AdminDashboard';
 import Tutor from "./pages/TutorDashboard"
+import AdminLogin from './pages/AdminLogin';
 import { Routes,Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/dashboard" element={<AdminDashboard />} />
       <Route path = "/tutordashboard" element = {<Tutor/>} />
+      <Route path = "/Admin" element = {<AdminLogin/>} />
+
     </Routes>
 
 
