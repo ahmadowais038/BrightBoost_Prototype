@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../assets/logo.png";
 import User from "../assets/user.png";
 import Notification from "../assets/notification.png";
+import LogoB from "../assets/Logo_brightBoost.jpeg"
 import Logout from "../assets/logout.png";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
@@ -13,7 +14,8 @@ const Header = () => {
         <Row>
           <Col sm={3}>
             <div className="logo text-left">
-              <img src={Logo} />
+              <img src={LogoB} alt="Logo"/>
+              <h3>BRIGHT BOOST</h3>
             </div>
           </Col>
           <Col sm={6}>
