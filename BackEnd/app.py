@@ -83,6 +83,16 @@ class Tutors(SQL_DB.Model):
         return f'User("{self.Account_ID}","{self.First_Name}","{self.Last_Name}","{self.Email}","{self.Phone_Num}","{self.Subjects}")'
     
 
+class TutoringSession(SQL_DB.Model):
+    __tablename__ = 'session'
+    ID = SQL_DB.Column(SQL_DB.Integer, primary_key=True) 
+    Subject = SQL_DB.Column(SQL_DB.String(25))
+    Tutor = SQL_DB.Column(SQL_DB.String(25))
+    Date = SQL_DB.Column(SQL_DB.Date)
+
+    def __repr__(self):
+        return f'TutoringSession(Subject: {self.Subject}, Teacher: {self.Teacher}, Date: {self.Date})'
+
 @app.route('/')
 def hello():
     return 'Hello World!'
@@ -147,29 +157,35 @@ def Register():
         return jsonify({"message": "Account Successfully registered, Log in to get started"}), 200
 
     elif role == "Tutor":
-        num_existing_tutors = Approve.query.count()
+        num_existing_tutors = Tutors.query.count()
         user_id = f'T11{num_existing_tutors + 1:02}'
 
-        await_email = Approve.query.filter_by(Email=Email).first()
+        # # await_email = Approve.query.filter_by(Email=Email).first()
         
-        if await_email:
-            return jsonify({"message": "Account already registered, awaiting Admin Approval"}), 201
+        # if await_email:
+        #     return jsonify({"message": "Account already registered, awaiting Admin Approval"}), 201
 
-        new_Tutor = Approve(
+        new_Account = Accounts(
+            Account_ID = user_id,
+            Role = role,
+            Email=Email,
+            Username=Username,
+            Password=password
+        )
+        
+        new_Tutor = Tutors(
             Account_ID = user_id,
             First_Name=FName,
             Last_Name=LName,
-            Role=role,
             Email=Email,
             Phone_Num=phone,
-            Username=Username,
-            Password=password,
-            Subjects=subjects,
+            Subjects=subjects
         )
 
+        SQL_DB.session.add(new_Account)
         SQL_DB.session.add(new_Tutor)
         SQL_DB.session.commit()
-        return jsonify({"message": "Tutor registration pending Admin approval"}), 200
+        return jsonify({"message": "Account Successfully registered, Log in to get started"}), 200
 
 @app.route('/api/log', methods=['POST'])
 def LogIn():
@@ -213,5 +229,37 @@ def LogIn():
     else:
         return jsonify({"message": "Invalid login credentials"}), 201
     
+
+
+@app.route('/api/sessions', methods=['POST'])
+def create_session():
+    data = request.json
+    subject = data.get('subject')
+    teacher = data.get('teacher')
+    date = data.get('date')
+
+    new_session = TutoringSession(Subject=subject, Tutor=teacher, Date=date)
+    SQL_DB.session.add(new_session)
+    SQL_DB.session.commit()
+
+    return jsonify({"message": "Session created successfully"}), 201
+
+@app.route('/api/getsesh', methods=['GET'])
+def get_sessions():
+    # Query the 'TutoringSession' table to get all sessions
+    sessions = TutoringSession.query.all()
+
+    session_list = [
+        {
+            "ID": session.ID,
+            "Subject": session.Subject,
+            "Tutor": session.Tutor,
+            "Date": session.Date.strftime('%Y-%m-%d')
+        }
+        for session in sessions
+    ]
+
+    return jsonify(session_list)
+
 if __name__ == '__main':
     app.run(debug=True)

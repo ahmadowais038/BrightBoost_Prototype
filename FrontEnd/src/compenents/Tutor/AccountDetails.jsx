@@ -4,10 +4,9 @@ import Phone from "../../assets/phone.png";
 import Email from "../../assets/email.png";
 const AccountDetails = () => {
     const TutorDetails = {
-        name: "Robert Woodland",
-        phone: "+61 404 352 443",
-        email: "104309387@student.swin.edu.au",
-        subject: "Physics",
+        name: `${sessionStorage.getItem("FirstName")} ${sessionStorage.getItem("LastName")}`,
+        phone: sessionStorage.getItem("Phone"),
+        email: sessionStorage.getItem("Email"),
     }
     return (
         <div className="academic-information-container white-box">
