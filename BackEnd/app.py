@@ -10,6 +10,7 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 
 # SQLAlchemy configuration
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost:3307/brightboost'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -56,7 +57,6 @@ class Student(SQL_DB.Model):
     __table_args__ = {'extend_existing': True}
     Account_ID = SQL_DB.Column(SQL_DB.String, SQL_DB.ForeignKey('Accounts.Account_ID'), primary_key=True)
     First_Name = SQL_DB.Column(SQL_DB.String(25))
-    First_Name = SQL_DB.Column(SQL_DB.String(25))
     Last_Name = SQL_DB.Column(SQL_DB.String(25))
     Email = SQL_DB.Column(SQL_DB.String(255), nullable=False)
     Phone_Num = SQL_DB.Column(SQL_DB.String(12))
@@ -74,7 +74,6 @@ class Tutors(SQL_DB.Model):
     __table_args__ = {'extend_existing': True}
     Account_ID = SQL_DB.Column(SQL_DB.String, SQL_DB.ForeignKey('Accounts.Account_ID'), primary_key=True)
     First_Name = SQL_DB.Column(SQL_DB.String(25))
-    First_Name = SQL_DB.Column(SQL_DB.String(25))
     Last_Name = SQL_DB.Column(SQL_DB.String(25))
     Email = SQL_DB.Column(SQL_DB.String(255), nullable=False)
     Phone_Num = SQL_DB.Column(SQL_DB.String(255))
@@ -82,19 +81,6 @@ class Tutors(SQL_DB.Model):
 
     def __repr__(self):
         return f'User("{self.Account_ID}","{self.First_Name}","{self.Last_Name}","{self.Email}","{self.Phone_Num}","{self.Subjects}")'
-
-
-# class Accounts(SQL_DB.Model):
-#     __tablename__ = 'accounts'
-#     __table_args__ = {'extend_existing': True}
-#     Account_ID = SQL_DB.Column(SQL_DB.String, primary_key=True)
-#     role = SQL_DB.Column(SQL_DB.String(25))
-#     email = SQL_DB.Column(SQL_DB.String(255), nullable=False)
-#     uname = SQL_DB.Column(SQL_DB.String(25))
-#     password = SQL_DB.Column(SQL_DB.String(25))
-
-#     def __repr__(self):
-#         return f'User("{self.Account_ID}","{self.role}","{self.email}","{self.uname}","{self.password}")'
     
 
 @app.route('/')
