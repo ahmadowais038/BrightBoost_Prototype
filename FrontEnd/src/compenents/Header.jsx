@@ -3,8 +3,7 @@ import Logo from "../assets/logo.png";
 import User from "../assets/user.png";
 import Notification from "../assets/notification.png";
 import LogoB from "../assets/Logo_brightBoost.jpeg"
-import Logout from "../assets/logout.png";
-import { Container, Row, Col, Nav } from "react-bootstrap";
+import { Container, Row, Col, Nav, Button } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
@@ -44,12 +43,11 @@ const Header = () => {
           <Col sm={3}>
             <div className="profile-container">
               <ul className="list-unstyled">
-                <li>John Doe</li>
                 <li>
-                  <img src={Notification} />
+                  {/* <img src={Notification} alt="Notification Icon" /> */}
                 </li>
-                <li>
-                  <img className="logout" src={Logout} />
+                <li className="logout">
+                  <Button variant="outline-light">Sign Out</Button>
                 </li>
               </ul>
             </div>
