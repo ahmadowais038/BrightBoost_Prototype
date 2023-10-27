@@ -1,105 +1,109 @@
 /* HomePage.css */
 
-/* Base Styles */
+/* === Base Styles === */
 .homepage-container {
     font-family: 'Arial', sans-serif;
     color: #333;
-    background-color: #f4f4f4;
+    background: #f4f4f4 url('../assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .content-container {
-    padding: 50px 0;
+    padding: 60px 0;
+    background-color: rgba(255, 255, 255, 0.7);  /* Slight white overlay to improve text visibility */
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Intro Section */
+/* === Intro Section === */
 .intro-section {
     text-align: center;
-    padding: 50px 0;
-    background-color: #fff;
+    padding: 60px 0;
 }
 
 .intro-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
 }
 
 .intro-section p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 35px;
 }
 
-/* Auth Section (Sign In & Register) */
+/* === Auth Section === */
 .auth-section {
-    background-color: #f9f9f9;
-    padding: 50px 0;
+    padding: 60px 0;
+    background-color: rgba(249, 249, 249, 0.8);
 }
 
 .register-box, .login-box {
     text-align: center;
-    padding: 30px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .register-box h2, .login-box h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 25px;
 }
 
-/* About Section */
+/* === About & Services Section === */
 .about-section {
-    background-color: #fff;
-    padding: 50px 0;
+    padding: 60px 0;
 }
 
 .about-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
 }
 
 .about-section p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
 }
 
-/* Testimonials Section */
+/* === Testimonials Section === */
 .testimonial-section {
-    background-color: #f9f9f9;
-    padding: 50px 0;
+    padding: 60px 0;
+    background-color: rgba(249, 249, 249, 0.8);
 }
 
 .testimonial-section h2 {
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
+    font-size: 2.4rem;
+    margin-bottom: 45px;
 }
 
 .testimonial-section blockquote {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     font-style: italic;
 }
 
 .testimonial-section blockquote footer {
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: right;
-    margin-top: 15px;
+    margin-top: 20px;
     display: block;
     color: #777;
 }
 
-/* Buttons Styles */
+/* === General Button Styles === */
 button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    width: 200px;
-    height: 60px;
-    transition: background-color 0.3s ease;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #333;
     color: #fff;
+    transform: scale(1.05);  /* Slight scale on hover for interaction */
 }
