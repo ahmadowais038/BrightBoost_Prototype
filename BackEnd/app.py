@@ -1,11 +1,7 @@
 from flask import Flask, jsonify, request, flash, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-# from flask_session import Session
-# from flask_bcrypt import Bcrypt
 from flask_mysqldb import MySQL
 from flask_cors import CORS, cross_origin
-# from uuid import uuid4
-# from models import db, User
 
 app = Flask(__name__)
 
