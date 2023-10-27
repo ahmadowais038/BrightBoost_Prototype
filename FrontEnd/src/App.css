@@ -143,6 +143,19 @@
 
 .header-container .logo img {
   float: left;
+   width: 60px;
+  height: 45px;
+}
+
+.header-container .logo h3 {
+  font-family: 'Arial', sans-serif;  
+  color: #333;                       
+  font-size: 30px;                 
+  font-weight: bold;                 
+  margin-left: 10px;                 
+  vertical-align: middle;            
+  display: inline-block;             
+  line-height: 1.2;                
 }
 
 .nav-container {
@@ -349,6 +362,17 @@
   align-self: center;
   text-align: center;
 }
+.footer-logo {
+    text-align: center;      
+    padding: 15px;           
+}
+
+.footer-logo img {
+    max-width: 150px;        
+    height: auto;            
+    display: block;          
+    margin: 0 auto;  
+  
 .footer-item-container h4{
   font-weight: 700;
   font-size: 18px;
