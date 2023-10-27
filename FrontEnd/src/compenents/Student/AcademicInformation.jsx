@@ -4,10 +4,9 @@ import Phone from "../../assets/phone.png";
 import Email from "../../assets/email.png";
 const AcademicInformation = () => {
     const StudentDetails = {
-        name: "Mathew Hasker",
-        phone: "+61 444 222 555",
-        email: "mathewhasker@gmail.com",
-        courseYear: "Computer Science - 4",
+        name: `${sessionStorage.getItem("FirstName")} ${sessionStorage.getItem("LastName")}`,
+        phone: sessionStorage.getItem("Phone"),
+        email: sessionStorage.getItem("Email"),
     }
     return (
         <div className="academic-information-container white-box">

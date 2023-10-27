@@ -24,24 +24,38 @@ const LoginModal = ({ show, handleClose }) => {
         const data = response.data;
         // setMessage(data.message);
 
-        if (response.status === 200){
-            sessionStorage.setItem('ID', data.Account_ID);
-            sessionStorage.setItem('Role', data.Role);
-            sessionStorage.setItem('FirstName', data.FirstName);
-            sessionStorage.setItem('LastName', data.LastName);
-            sessionStorage.setItem('Phone', data.Phone);
-            sessionStorage.setItem('Email', data.Email);
-            sessionStorage.setItem('LogStatus', "True");
+        if (response.status === 200) {
 
-            if(data.Role == "Student"){
-                window.location.href="http://localhost:5173/StudentDashboard"
+            if (data.Role == "Student") {
+                sessionStorage.setItem('ID', data.Account_ID);
+                sessionStorage.setItem('Role', data.Role);
+                sessionStorage.setItem('FirstName', data.FirstName);
+                sessionStorage.setItem('LastName', data.LastName);
+                sessionStorage.setItem('Phone', data.Phone);
+                sessionStorage.setItem('Email', data.Email);
+                sessionStorage.setItem('LogStatus', "True");
+                window.location.href = "StudentDashboard"
             }
-            else if(data.Role == "Tutor"){
-                window.location.href="http://localhost:5173/tutordashboard"
+            else if (data.Role == "Tutor") {
+                window.location.href = "tutordashboard"
+                sessionStorage.setItem('ID', data.Account_ID);
+                sessionStorage.setItem('Role', data.Role);
+                sessionStorage.setItem('FirstName', data.FirstName);
+                sessionStorage.setItem('LastName', data.LastName);
+                sessionStorage.setItem('Phone', data.Phone);
+                sessionStorage.setItem('Email', data.Email);
+                sessionStorage.setItem('LogStatus', "True");
+            }
+            else if(data.Role == "admin"){
+                sessionStorage.setItem('Role', data.Role);
+                sessionStorage.setItem('LogStatus', "True");
+                window.location.href = "dashboard"
             }
         }
+
         
-        if (response.status === 201){
+
+        if (response.status === 201) {
             setMessage(data.message);
             setMessageType('error');
             console.log(messageType);
@@ -58,24 +72,24 @@ const LoginModal = ({ show, handleClose }) => {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
-                        <Form.Control 
-                        type="text"
-                        name='username' 
-                        placeholder="Enter Username" 
-                        value={formData.username}
-                        onChange={handleChange}/>
+                        <Form.Control
+                            type="text"
+                            name='username'
+                            placeholder="Enter Username"
+                            value={formData.username}
+                            onChange={handleChange} />
                     </Form.Group>
-                    
+
                     <br />
 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control 
-                        type="password" 
-                        name='password'
-                        placeholder="Enter Password" 
-                        value={formData.password}
-                        onChange={handleChange} />
+                        <Form.Control
+                            type="password"
+                            name='password'
+                            placeholder="Enter Password"
+                            value={formData.password}
+                            onChange={handleChange} />
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Login
