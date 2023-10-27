@@ -168,6 +168,29 @@
   padding-bottom: 12px;
 }
 
+/* signout button */
+
+.profile-container .logout {
+  margin-left: 10px; 
+}
+
+.profile-container .logout button {
+  background-color: #31a992; 
+  border: none; 
+  color: #ffffff; 
+  font-size: 1rem; 
+  padding: 5px 25px; 
+  border-radius: 4px; 
+  white-space: nowrap; 
+  transition: background-color 0.3s ease; 
+}
+
+.profile-container .logout button:hover {
+  background-color: #27907a; 
+  color: #ffffff; 
+  cursor: pointer; 
+}
+
 .profile-container {
   float: right;
 }
