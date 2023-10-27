@@ -13,10 +13,10 @@
   }
 }
 
-.float-right{
+.float-right {
   float: right;
 }
-.btn-actions button{
+.btn-actions button {
   margin: 0 10px;
 }
 .App-header {
@@ -44,9 +44,9 @@
 }
 .App {
   text-align: center;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
   background-color: #ecf1ee;
-  color:#808080;
+  color: #808080;
 }
 
 .App-logo {
@@ -89,7 +89,6 @@
 .white-box {
   margin-top: 12px;
   background-color: #fff;
-
 }
 
 .white-box .title {
@@ -101,39 +100,35 @@
 
 .white-box .title p {
   margin-bottom: 0;
-  color:#fff;
+  color: #fff;
 }
 
 .white-box .content {
   margin-top: 12px;
-  
+
   padding: 8px 12px;
 }
 .flex-container {
   display: flex;
-
 }
-.white-box .additional-information{
+.white-box .additional-information {
   margin-top: 12px;
   border-top: 1px solid #31a992;
   padding-top: 12px;
   text-align: left;
 }
-.white-box .additional-information.action{
+.white-box .additional-information.action {
   text-align: center;
 }
-.btn-primary{
-  background-color:#04375b !important;
+.btn-primary {
+  background-color: #04375b !important;
   font-size: 14px !important;
   border-radius: 0 !important;
   border: 0 !important;
   color: white;
   margin-top: 8px;
-  padding: 6px 8px; 
-  
+  padding: 6px 8px;
 }
-
-
 
 /** Header */
 .header-container {
@@ -143,10 +138,9 @@
 
 .header-container .logo img {
   float: left;
-   width: 60px;
+  width: 60px;
   height: 45px;
 }
-
 .header-container .logo h3 {
   font-family: 'Arial', sans-serif;  
   color: #333;                       
@@ -158,13 +152,14 @@
   line-height: 1.2;                
 }
 
+
 .nav-container {
   font-size: 14px;
 }
 
 .nav-container a {
   color: #808080;
-  padding: 14px 12px
+  padding: 14px 12px;
 }
 
 .nav-container a.active {
@@ -176,15 +171,15 @@
 .profile-container {
   float: right;
 }
-.profile-container ul{
+.profile-container ul {
   margin-bottom: 0;
   margin-top: 5px;
 }
 .profile-container li {
   display: table-cell;
-  padding: 8px 8px
+  padding: 8px 8px;
 }
-.profile-container img{
+.profile-container img {
   width: 18px;
 }
 .profile-container .logout {
@@ -198,7 +193,7 @@
   border-radius: 50%;
 }
 
-.information{
+.information {
   text-align: left;
   align-self: center;
   margin-left: 12px;
@@ -206,74 +201,72 @@
 .information {
   font-size: 14px;
 }
-.information .name{
+.information .name {
   font-weight: 700;
   font-size: 18px;
-  color:#000;
+  color: #000;
 }
 
-
 .attendance-history-container,
-.academic-information-container{
+.academic-information-container {
   height: 302px;
   overflow: hidden;
 }
-.upcoming-sessions-container{
+.upcoming-sessions-container {
   height: 352px;
 }
 
-.additional-information img{
+.additional-information img {
   width: 18px;
   margin-right: 12px;
 }
-.additional-information .email{
+.additional-information .email {
   color: #31a992;
   font-size: 14px;
 }
 
 /**AttendanceHistory */
-.chart{
+.chart {
   height: 173px;
 }
 
-.additional-information p{
+.additional-information p {
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
 }
-.additional-information p.date{
+.additional-information p.date {
   color: #31a992;
   font-size: 12px;
 }
 
 /** Upcoming Sessions */
 .session-table-container th,
-.session-table-container td{
+.session-table-container td {
   font-size: 12px;
 }
 .subjects-table-container th,
-.subjects-table-container td{
+.subjects-table-container td {
   font-size: 12px;
 }
-.subjects-table-container tr td{
+.subjects-table-container tr td {
   cursor: pointer;
-  
 }
-.subjects-table-container tr td.select{
-  text-align: center
+.subjects-table-container tr td.select {
+  text-align: center;
 }
-.subjects-table-container tr td.select img{
+.subjects-table-container tr td.select img {
   width: 14px;
 }
 .subjects-table-container tr.selected td,
-.subjects-table-container tr.selected th{
-  background:#31a992;
-  color:#fff;
+.subjects-table-container tr.selected th {
+  background: #31a992;
+  color: #fff;
   font-weight: 400;
   font-size: 12px;
-} 
+}
 
-.subjects-table-container .go-back{
+.subjects-table-container .go-back {
   color: #31a992;
   font-size: 12px;
   cursor: pointer;
@@ -283,23 +276,22 @@
   display: inline-block;
   margin-bottom: 12px;
 }
-.subjects-table-container .go-back img{
+.subjects-table-container .go-back img {
   margin-top: -2px;
   width: 10px;
   margin-right: 8px;
 }
 
-.subjects-table-container .question-area{
-  
+.subjects-table-container .question-area {
   font-size: 12px;
   border-radius: 0;
 }
 
 /** Recently Asked Questions */
-.recent-asked-container{
+.recent-asked-container {
   height: 249px;
 }
-.recent-asked-container .content{
+.recent-asked-container .content {
   padding: 0;
   margin-top: 0;
   padding-left: 12px;
@@ -307,62 +299,61 @@
   height: 211px;
   overflow-y: scroll;
 }
-.recent-asked-container .content .question-answer-container{
+.recent-asked-container .content .question-answer-container {
   margin-top: 8px;
 }
-.recent-asked-container .content .question-answer-container .question{
+.recent-asked-container .content .question-answer-container .question {
   font-weight: 700;
   color: #000;
   margin-bottom: 0;
 }
-.recent-asked-container .content .question-answer-container .answer{
+.recent-asked-container .content .question-answer-container .answer {
   padding-left: 8px;
   font-size: 14px;
 }
 .ask-a-question-container,
-.reserve-study-container{
+.reserve-study-container {
   height: 93px;
   padding: 12px;
 }
 .ask-a-question-container h3,
-.reserve-study-container h3{
+.reserve-study-container h3 {
   font-size: 18px;
-  color:#000
-
+  color: #000;
 }
-.filter-input{
+.filter-input {
   font-size: 12px !important;
   border-radius: 0 !important;
 }
 
-.white-box .content.faq-content{
+.white-box .content.faq-content {
   padding: 12px 80px;
   padding-bottom: 30px;
   text-align: left;
 }
 
 /** Footer */
-.footer-container{
+.footer-container {
   margin-top: 30px;
   height: 250px;
   background-color: #31a992;
   padding-top: 30px;
-  color:#fff;
+  color: #fff;
 }
-.footer-container .flex-container{
+.footer-container .flex-container {
   justify-content: space-between;
 }
-.footer-item-container{
+.footer-item-container {
   padding: 0px 8px;
   text-align: left;
   flex: 1;
 }
 
-.footer-item-container.footer-logo{
+.footer-item-container.footer-logo {
   align-self: center;
   text-align: center;
 }
-.footer-logo {
+  .footer-logo {
     text-align: center;      
     padding: 15px;           
 }
@@ -371,20 +362,21 @@
     max-width: 150px;        
     height: auto;            
     display: block;          
-    margin: 0 auto;  
-  
-.footer-item-container h4{
+    margin: 0 auto;          
+
+}
+.footer-item-container h4 {
   font-weight: 700;
   font-size: 18px;
 }
-.footer-item-container p{
+.footer-item-container p {
   font-weight: 400;
   font-size: 14px;
 }
-.footer-container .socal-medias{
+.footer-container .socal-medias {
   margin-top: 24px;
 }
-.footer-container .socal-medias ul li{
+.footer-container .socal-medias ul li {
   display: table-cell;
 
   padding-right: 32px;
@@ -399,8 +391,7 @@
   justify-content: center;
 } */
 
-
-.Content{
+.Content {
   height: 100vh;
   display: flex;
   justify-content: center; /*Horizontally center the container*/
@@ -408,28 +399,15 @@
   /*Vertically center the container */
 }
 
-.Log{
+.Log {
   text-align: center;
   margin-top: 5px;
 }
 
 /** Tutor Dashboard */
 /** Tutot Upcoming Sessions */
-.tutorupcoming-sessions-container{
+.tutorupcoming-sessions-container {
   height: 302px;
-  overflow: hidden;
-}
-.tutorsession-table-container {
-  max-height: 220px; /* Set the maximum height of the container */
-  overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
-}
-.custom-modal {
-  max-width: 80%; /* Adjust the maximum width of the modal */
-  margin: 0 auto; /* Center the modal horizontally */
-}
-.custom-table {
-  max-height: 400px; /* Adjust the maximum height of the table */
-  overflow: auto; /* Add a scrollbar when content exceeds the maximum height */
 }
 /* Questions to be Answered */
 
@@ -440,27 +418,27 @@
 
 .questionstobeanswered-content {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
 }
 
 .centered-container {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .session-selection-container {
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: center;
-  margin-top: 30px;
-  border: 1px solid #ddd; 
+  margin-top: 10px;
+  border: 1px solid #ddd;
   padding: 20px;
-  width: 450px; 
-  height: 200px; 
+  width: 450px;
+  height: 175px;
 }
 
 .session-selection-container label {
-  font-size: 25px; 
+  font-size: 25px;
   margin-bottom: 15px; /* Add space between label and dropdown */
 }
 
@@ -488,7 +466,7 @@
   transform: translate(-50%, -50%);
   padding: 20px;
   background: #fff;
-  border: 1px solid #d3d6d6;
+  border: 1px solid #31a992;
   border-radius: 5px;
   width: 1000px;
   z-index: 1000;
@@ -521,6 +499,29 @@
   gap: 10px;
   margin-top: 20px;
 }
+/** Recently Answered Questions */
+.recent-answered-container {
+  height: 350px;
+  overflow: hidden;
+}
+
+.recent-answered-container .content {
+  padding: 0;
+  margin-top: 0;
+  padding-left: 12px;
+  text-align: left;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.recent-answered-container .content ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+}
 
 /** SelectAvailability */
 .selectavailability-container {
@@ -534,7 +535,6 @@
 .title {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  
 }
 
 .selectavailability-content {
@@ -543,7 +543,7 @@
 }
 
 .form-container {
-  flex: 0 0 30%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   padding-right: 20px;
@@ -558,9 +558,9 @@
 }
 .form-group label {
   display: inline-block;
-  width: 0 0 100px; 
+  width: 0 0 100px;
   text-align: left;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 .button-container {
   display: flex;
@@ -570,7 +570,7 @@
 
 /* Add a vertical line to separate form and table */
 .form-container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -581,7 +581,7 @@
 }
 
 .table-container {
-  flex: 0 0 70%;
+  flex: 1;
   box-sizing: border-box;
   padding-left: 20px;
   width: 50%; /* Set width to 50% */
@@ -589,7 +589,7 @@
   max-height: 200px;
 }
 .table-container th,
-.table-container td{
+.table-container td {
   font-size: 12px;
 }
 
@@ -604,7 +604,8 @@ table {
   border: 1px solid #ddd;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #dddd; /* Border for all sides of cells */
   padding: 12px;
   text-align: centered;
@@ -613,7 +614,8 @@ th, td {
 th {
   color: #000;
 }
-th, td {
+th,
+td {
   border-top: 1px solid #dddd;
   border-bottom: 1px solid #dddd;
   border-left: 1px solid #dddd;
@@ -628,7 +630,7 @@ th, td {
   transform: translate(-50%, -50%);
   padding: 20px;
   background: #fff;
-  border: 1px solid #e2e4e4;
+  border: 1px solid #31a992;
   border-radius: 5px;
   width: 400px; /* Adjust the width as needed */
 }
