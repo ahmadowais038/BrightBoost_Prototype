@@ -23,7 +23,6 @@ const AcademicInformation = () => {
                         <ul className="list-unstyled">
                             <li className="name">{StudentDetails.name}</li>
                             <li className="course">{StudentDetails.courseYear}</li>
-                            <li className="department">Lorem ipsum dolor sit amet  </li>
                         </ul>
                     </div>
 

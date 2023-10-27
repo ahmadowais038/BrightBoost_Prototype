@@ -168,6 +168,29 @@
   padding-bottom: 12px;
 }
 
+/* signout button */
+
+.profile-container .logout {
+  margin-left: 10px; 
+}
+
+.profile-container .logout button {
+  background-color: #31a992; 
+  border: none; 
+  color: #ffffff; 
+  font-size: 1rem; 
+  padding: 5px 25px; 
+  border-radius: 4px; 
+  white-space: nowrap; 
+  transition: background-color 0.3s ease; 
+}
+
+.profile-container .logout button:hover {
+  background-color: #27907a; 
+  color: #ffffff; 
+  cursor: pointer; 
+}
+
 .profile-container {
   float: right;
 }
@@ -406,8 +429,21 @@
 
 /** Tutor Dashboard */
 /** Tutot Upcoming Sessions */
-.tutorupcoming-sessions-container {
+.tutorupcoming-sessions-container{
   height: 302px;
+  overflow: hidden;
+}
+.tutorsession-table-container {
+  max-height: 220px; /* Set the maximum height to 90% of the container */
+  overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
+}
+.custom-modal {
+  max-width: 80%; /* Adjust the maximum width of the modal */
+  margin: 0 auto; /* Center the modal horizontally */
+}
+.custom-table {
+  max-height: 400px; /* Adjust the maximum height of the table */
+  overflow: auto; /* Add a scrollbar when content exceeds the maximum height */
 }
 /* Questions to be Answered */
 
@@ -418,27 +454,27 @@
 
 .questionstobeanswered-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
 }
 
 .centered-container {
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
 }
 
 .session-selection-container {
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: center;
-  margin-top: 10px;
-  border: 1px solid #ddd;
+  margin-top: 30px;
+  border: 1px solid #ddd; 
   padding: 20px;
-  width: 450px;
-  height: 175px;
+  width: 450px; 
+  height: 200px; 
 }
 
 .session-selection-container label {
-  font-size: 25px;
+  font-size: 25px; 
   margin-bottom: 15px; /* Add space between label and dropdown */
 }
 
@@ -466,7 +502,7 @@
   transform: translate(-50%, -50%);
   padding: 20px;
   background: #fff;
-  border: 1px solid #31a992;
+  border: 1px solid #d3d6d6;
   border-radius: 5px;
   width: 1000px;
   z-index: 1000;
@@ -499,78 +535,34 @@
   gap: 10px;
   margin-top: 20px;
 }
-/** Recently Answered Questions */
-.recent-answered-container {
-  height: 350px;
-  overflow: hidden;
-}
-
-.recent-answered-container .content {
-  padding: 0;
-  margin-top: 0;
-  padding-left: 12px;
-  text-align: left;
-  height: 100%;
-  overflow-y: scroll;
-}
-
-.recent-answered-container .content ol {
-  list-style-type: decimal;
-  padding-left: 20px;
-  margin-top: 8px;
-  font-size: 14px;
-  color: #000;
-  line-height: 1.5;
-}
 
 /** SelectAvailability */
-.selectavailability-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
-}
 
-.title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+.selectavailability-container {
+  height: auto; /* Remove fixed height */
 }
 
 .selectavailability-content {
   display: flex;
-  flex: 1;
+  padding: 0;
+  margin-top: 0;
+  padding-left: 12px;
+  text-align: left;
 }
 
 .form-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  flex: 0 0 30%;
   padding-right: 20px;
   box-sizing: border-box;
-  position: relative;
-  width: 50%; /* Set width to 50% */
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-.form-group label {
-  display: inline-block;
-  width: 0 0 100px;
-  text-align: left;
-  margin-bottom: 5px;
+  width: 30%; /* Set width to 30% */
 }
 .button-container {
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
-
-/* Add a vertical line to separate form and table */
 .form-container::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -579,17 +571,16 @@
   background-color: #ddd; /* Line color */
   margin-right: 10px;
 }
-
 .table-container {
-  flex: 1;
+  flex: 0 0 70%;
   box-sizing: border-box;
   padding-left: 20px;
-  width: 50%; /* Set width to 50% */
+  width: 70%; /* Set width to 70% */
   overflow-y: auto; /* Add vertical scrollbar */
-  max-height: 200px;
+   
 }
 .table-container th,
-.table-container td {
+.table-container td{
   font-size: 12px;
 }
 
@@ -604,8 +595,7 @@ table {
   border: 1px solid #ddd;
 }
 
-th,
-td {
+th, td {
   border: 1px solid #dddd; /* Border for all sides of cells */
   padding: 12px;
   text-align: centered;
@@ -614,8 +604,7 @@ td {
 th {
   color: #000;
 }
-th,
-td {
+th, td {
   border-top: 1px solid #dddd;
   border-bottom: 1px solid #dddd;
   border-left: 1px solid #dddd;
@@ -630,7 +619,7 @@ td {
   transform: translate(-50%, -50%);
   padding: 20px;
   background: #fff;
-  border: 1px solid #31a992;
+  border: 1px solid #e2e4e4;
   border-radius: 5px;
   width: 400px; /* Adjust the width as needed */
 }
@@ -653,6 +642,7 @@ td {
   gap: 10px;
   margin-top: 20px;
 }
+
 
 .reg-error {
   color: red;
