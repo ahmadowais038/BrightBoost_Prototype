@@ -31,12 +31,7 @@ const Header = () => {
                 <Nav.Item>
                   <Nav.Link as={NavLink} to="/dashboard" activeClassName="active">Dashboard</Nav.Link>
                 </Nav.Item>   
-                <Nav.Item>
-                  <Nav.Link as={NavLink} to="/tutordashboard" activeClassName="active">Tutor Dashboard</Nav.Link>
-                </Nav.Item>   
-                <Nav.Item>
-                  <Nav.Link as={NavLink} to="/StudentDashboard" activeClassName="active">Student Dashboard</Nav.Link>
-                </Nav.Item>            
+                        
               </Nav>
             </div>
           </Col>
