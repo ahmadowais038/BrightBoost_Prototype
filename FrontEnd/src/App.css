@@ -653,3 +653,23 @@ td {
   gap: 10px;
   margin-top: 20px;
 }
+
+.reg-error {
+  color: red;
+  background-color: #e7adad;
+  font-weight: bold;
+  width: 80%;
+  margin: 0 auto; /* Horizontally center the element */
+  padding: 10px; /* Adjust padding as needed */
+  text-align: center; /* Center the text horizontally */
+}
+
+.reg-success {
+  color: Green;
+  background-color: #c3e7ad;
+  font-weight: bold;
+  width: 80%;
+  margin: 0 auto; /* Horizontally center the element */
+  padding: 10px; /* Adjust padding as needed */
+  text-align: center; /* Center the text horizontally */
+}

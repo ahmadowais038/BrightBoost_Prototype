@@ -3,10 +3,10 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import axios from "axios";
 
 const RegisterModal = ({ show, handleClose }) => {
-    // const [role, setRole] = useState('');
     const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState(null);
     const [formData, setFormData] = useState({
-        role: "",
+        role: "Student",
         FirstName: "",
         LastName: "",
         email: "",
@@ -29,25 +29,22 @@ const RegisterModal = ({ show, handleClose }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:5000/api/reg', formData);
+        const response = await axios.post('http://localhost:5000/api/reg', formData);
+        const data = response.data;
+        setMessage(data.message);
 
-            if (response.status === 200 || response.status === 400) {
-                const data = response.data;
-                console.log(data.message);
-                // setMessage(data.message);
-            } else {
-                console.error('Error:', response.statusText);
-                const errorMessage = response.data.message;
-                // setMessage(errorMessage);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            setMessage("An error has occurred!");
+        if (response.status === 200){
+            console.log(data.message);
+            setMessageType('success');
+        }
+        
+        if (response.status === 201){
+            console.log(data.message);
+            setMessageType('error');
+            console.log(messageType);
+
         }
     };
-
-
 
     const isStudent = formData.role === 'Tutor';
 
@@ -182,23 +179,25 @@ const RegisterModal = ({ show, handleClose }) => {
                                 <Form.Control
                                     name='expiry'
                                     type="text"
-                                    placeholder="Expiry (DD/MM)"
+                                    placeholder="Expiry (MM/YY)"
                                     value={formData.expiry}
                                     onChange={handleChange} />
                                 <br />
                             </Form.Group>
                         </>
                     )}
-                    {/* {!isStudent && (
-                        <Form.Group controlId="formBasicSubjects">
-                            <Form.Label>Subjects</Form.Label>
-                            <Form.Control type="text" placeholder="Enter subjects separated by comma" />
-                        </Form.Group>
-                    )} */}
+                    
                     <Button variant="primary" type="submit">
                         Register
                     </Button>
                 </Form>
+                <br />
+                {message && messageType === 'error' && (
+                    <p className='reg-error'>{message}</p>
+                )}
+                {message && messageType === 'success' && (
+                    <p className='reg-success'>{message}</p>
+                )}
             </Modal.Body>
         </Modal>
     );

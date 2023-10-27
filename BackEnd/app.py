@@ -104,13 +104,13 @@ def Register():
     existing_uname = Accounts.query.filter_by(Username=Username).first()
     
     if existing_email and existing_uname:
-        return jsonify({"message": "Account associated with this email and username already exists"}), 400
+        return jsonify({"message": "Account associated with this email and username already exists"}), 201
 
     elif existing_email:
-        return jsonify({"message": "Account associated with this email already exists"}), 400
+        return jsonify({"message": "Account associated with this email already exists"}), 201
 
     elif existing_uname:
-        return jsonify({"message": "Account associated with this username already exists"}), 400
+        return jsonify({"message": "Account associated with this username already exists"}), 201
 
     if role == "Student":
         num_existing_students = Student.query.count()
@@ -144,16 +144,16 @@ def Register():
         SQL_DB.session.add(new_Account)
         SQL_DB.session.add(new_student)
         SQL_DB.session.commit()
-        return jsonify({"message": "Account Successfully registered"}), 200
+        return jsonify({"message": "Account Successfully registered, Log in to get started"}), 200
 
     elif role == "Tutor":
-        num_existing_tutors = Tutors.query.count()
+        num_existing_tutors = Approve.query.count()
         user_id = f'T11{num_existing_tutors + 1:02}'
 
         await_email = Approve.query.filter_by(Email=Email).first()
         
         if await_email:
-            return jsonify({"message": "Account already registered, awaiting Admin Approval"}), 400
+            return jsonify({"message": "Account already registered, awaiting Admin Approval"}), 201
 
         new_Tutor = Approve(
             Account_ID = user_id,
@@ -177,13 +177,34 @@ def LogIn():
     username = data.get('username')
     password = data.get('password')
 
-    is_user = Student.query.filter_by(Username=username, Password=password).first()
+    user_account = Accounts.query.filter_by(Username=username, Password=password).first()
     
-    if is_user:
-        return jsonify({"message": "Login successful"}), 200
+    if user_account:
+        user_data = {
+            "Account_ID": user_account.Account_ID,
+            "Role": user_account.Role
+        }
+
+        if user_account.Role == "Student":
+            student = Student.query.filter_by(Account_ID=user_account.Account_ID).first()
+            if student:
+                user_data["FirstName"] = student.First_Name
+                user_data["LastName"] = student.Last_Name
+                user_data["Phone"] = student.Phone_Num
+                user_data["Email"] = student.Email
+            
+        elif user_account.Role == 'Tutor':
+            tutor = Tutors.query.filter_by(Account_ID=user_account.Account_ID).first()
+            if tutor:
+                user_data["FirstName"] = tutor.First_Name
+                user_data["LastName"] = tutor.Last_Name
+                user_data["Phone"] = tutor.Phone_Num
+                user_data["Email"] = tutor.Email
+   
+        return jsonify(user_data), 200
 
     else:
-        return jsonify({"message": "Invalid login credentials"}), 400
+        return jsonify({"message": "Invalid login credentials"}), 201
     
 if __name__ == '__main':
     app.run(debug=True)
